@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ruta de la Guerra Civil a Barcelona</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+    header p {
+      margin: 0.2rem 0 0 0;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    .header-text {
+      max-width: 600px;
+    }
+    .lang-switcher {
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+    }
+    .lang-switcher span {
+      font-size: 0.75rem;
+      opacity: 0.8;
+      margin-right: 0.1rem;
+    }
+    .lang-btn {
+      border: 1px solid #fff;
+      background: transparent;
+      color: #fff;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    .lang-btn.active {
+      background: #fff;
+      color: #222;
+      font-weight: 600;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+    .intro, .map-link, .waypoints {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+    .map-link a {
+      display: inline-block;
+      margin-top: 0.8rem;
+      padding: 0.6rem 1rem;
+      text-decoration: none;
+      border-radius: 999px;
+      border: 1px solid #222;
+      font-size: 0.9rem;
+    }
+    .map-link a:hover {
+      background: #222;
+      color: #fff;
+    }
+    .waypoint {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .waypoint:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .waypoint h3 {
+      margin-top: 0;
+      font-size: 1.15rem;
+    }
+    .tag {
+      display: inline-block;
+      background: #eee;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      margin-right: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+    .coords {
+      font-size: 0.8rem;
+      color: #555;
+      margin-top: 0.3rem;
+    }
+    .footer-note {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+
+    .waypoint-img {
+      width: 100%;
+      max-height: 260px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 0.75rem 0 0.75rem 0;
+      display: block;
+    }
+
+    /* Botón Kahoot: plano y discreto */
+    .kahoot-link {
+      display: inline-block;
+      margin-top: 0.6rem;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: 1px solid #d0d0d0;
+      background: #f3f3f3;
+      color: #333;
+      font-size: 0.85rem;
+      text-decoration: none;
+    }
+    .kahoot-link:hover {
+      background: #e5e5e5;
+      border-color: #c0c0c0;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      header h1 {
+        font-size: 1.4rem;
+      }
+      main {
+        padding: 1rem;
+      }
+    }
+
+    /* Idiomes */
+    .lang-section {
+      display: none;
+    }
+    .lang-section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-text">
+    <h1>Ruta de la Guerra Civil a Barcelona</h1>
+    <p>Itinerari circular a peu · Aproximadament 2 hores · 10 punts clau de memòria històrica</p>
+  </div>
+  <div class="lang-switcher">
+    <span>Idioma / Language:</span>
+    <button class="lang-btn active" data-lang="ca">Català</button>
+    <button class="lang-btn" data-lang="es">Castellano</button>
+    <button class="lang-btn" data-lang="en">English</button>
+  </div>
+</header>
+
+<main>
+  <!-- ====================== CATALÀ ====================== -->
+  <section id="lang-ca" class="lang-section active">
+    <section class="intro">
+      <h2>Descripció de la ruta</h2>
+      <p>
+        Aquesta ruta proposa un recorregut circular per alguns dels espais més significatius
+        de Barcelona durant la Guerra Civil Espanyola (1936–1939). El punt d’inici i final és la
+        <strong>Plaça Catalunya</strong>, i el trajecte passa pel Barri Gòtic, el centre històric,
+        l’Eixample i el barri de Gràcia.
+      </p>
+      <p>
+        El recorregut està pensat per fer-se <strong>a peu</strong>, en aproximadament
+        <strong>2 hores</strong>, combinant caminades amb aturades d’uns 8–10 minuts a cada lloc
+        per llegir la informació, observar l’espai i imaginar el context històric.
+      </p>
+      <p>
+        La ruta se centra en tres grans eixos: la vida quotidiana en temps de guerra, els espais
+        de poder i control, i la memòria visible que encara resta a les façanes i places.
+      </p>
+      <p style="font-size:0.85rem; color:#555; margin-top:0.8rem;">
+        A cada punt tens un enllaç a un <strong>Kahoot de 3 preguntes</strong> perquè puguis 
+        jugar mentre ets físicament al lloc.
+      </p>
+    </section>
+
+    <section class="map-link">
+      <h2>Ruta al Google Maps</h2>
+      <p>
+        Pots seguir la ruta directament a Google Maps amb aquest enllaç. El trajecte està configurat com a
+        ruta circular a peu, començant i acabant a la Plaça Catalunya.
+      </p>
+      <p>
+        <a href="https://www.google.com/maps/dir/Plaça+Catalunya,+Barcelona/Portal+de+l'Àngel,+Barcelona/Plaça+de+Sant+Felip+Neri,+Barcelona/Plaça+del+Rei,+Barcelona/Via+Laietana+10,+Barcelona/Plaça+d'Urquinaona,+Barcelona/Plaça+del+Diamant,+Barcelona/Casa+de+les+Punxes,+Barcelona/Avinguda+Diagonal+420,+Barcelona/Plaça+Catalunya,+Barcelona/"
+           target="_blank" rel="noopener noreferrer">
+          Obrir la ruta a Google Maps
+        </a>
+      </p>
+    </section>
+
+    <section class="waypoints">
+      <h2>Punts de la ruta (pinpoints)</h2>
+
+      <!-- 1 -->
+      <article class="waypoint">
+        <h3>1. Plaça Catalunya – El cor de la Barcelona republicana</h3>
+        <div>
+          <span class="tag">Punt d’inici i final</span>
+          <span class="tag">Eix neuràlgic</span>
+        </div>
+        <img src="images/placa-catalunya.jpg" alt="Plaça Catalunya" class="waypoint-img">
+        <p>
+          Durant la Guerra Civil, la Plaça Catalunya era el gran centre d’organització política i social
+          de Barcelona. Des d’aquí sortien columnes de milicians cap al front, s’hi celebraven mítings
+          i era també un espai de propaganda i mobilització popular. Molts edificis de l’entorn van patir
+          impactes de metralla i bombardejos aeris.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Plaça Catalunya, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=9266f886-42d8-4e03-948c-05d5c4f097ce"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot d’aquest punt
+          </a>
+        </p>
+      </article>
+
+      <!-- 2 -->
+      <article class="waypoint">
+        <h3>2. Portal de l’Àngel – Les marques del foc creuat</h3>
+        <div>
+          <span class="tag">Façanes amb metralla</span>
+          <span class="tag">Centre històric</span>
+        </div>
+        <img src="images/portal-angel.jpg" alt="Portal de l’Àngel" class="waypoint-img">
+        <p>
+          El Portal de l’Àngel és avui una artèria comercial molt concorreguda, però durant els anys
+          1936–1937 va ser escenari de tirotejos i enfrontaments. Encara avui, algunes façanes mostren
+          impactes de bala i metralla, un record discret però molt eloqüent de la violència viscuda al
+          centre de la ciutat.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Portal de l’Àngel, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=b67e228a-2ed3-402f-a84d-a90bfddd7557"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot d’aquest punt
+          </a>
+        </p>
+      </article>
+
+      <!-- 3 -->
+      <article class="waypoint">
+        <h3>3. Plaça de Sant Felip Neri – La tragèdia dels bombardejos</h3>
+        <div>
+          <span class="tag">Bombardeig 1938</span>
+          <span class="tag">Memòria de les víctimes</span>
+        </div>
+        <img src="images/sant-felip-neri.jpg" alt="Plaça de Sant Felip Neri" class="waypoint-img">
+        <p>
+          La plaça de Sant Felip Neri és un dels espais més colpidors de Barcelona. L’any 1938 va ser
+          bombardejada i hi van morir desenes de persones, molts d’ells infants. La façana de l’església
+          conserva els impactes de metralla al voltant de la porta: aquestes marques s’han mantingut
+          expressament com a memorial.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Plaça de Sant Felip Neri, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=84ceeed9-5cd6-4432-89f1-46d6e7538fa4"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot d’aquest punt
+          </a>
+        </p>
+      </article>
+
+      <!-- 4 -->
+      <article class="waypoint">
+        <h3>4. Plaça del Rei – Arxius i poder institucional</h3>
+        <div>
+          <span class="tag">Barri Gòtic</span>
+          <span class="tag">Arxius històrics</span>
+        </div>
+        <img src="images/placa-del-rei.jpg" alt="Plaça del Rei" class="waypoint-img">
+        <p>
+          La Plaça del Rei, envoltada d’edificis medievals i renaixentistes, va ser un espai vinculat
+          a l’administració i a la protecció de documentació durant la guerra. És un lloc ideal per
+          reflexionar sobre com el poder polític i la gestió de la memòria també formen part del conflicte.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Plaça del Rei, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=989e4419-97a6-4356-9180-c55cd333719e"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot d’aquest punt
+          </a>
+        </p>
+      </article>
+
+      <!-- 5 -->
+      <article class="waypoint">
+        <h3>5. Via Laietana 10 – Nervi policial i de repressió</h3>
+        <div>
+          <span class="tag">Comissaria</span>
+          <span class="tag">Control polític</span>
+        </div>
+        <img src="images/via-laietana.jpg" alt="Via Laietana" class="waypoint-img">
+        <p>
+          La Via Laietana ha estat durant dècades sinònim de control i repressió. Ja en temps de la
+          Guerra Civil hi havia dependències policials i, posteriorment, en època franquista, es
+          consolidaria com un dels espais més temuts per a la dissidència política.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Via Laietana 10, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=a786c388-fa87-4643-aadd-260b0119af32"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot d’aquest punt
+          </a>
+        </p>
+      </article>
+
+      <!-- 6 -->
+      <article class="waypoint">
+        <h3>6. Plaça d’Urquinaona – Barricades i enfrontaments interns</h3>
+        <div>
+          <span class="tag">Fets de Maig 1937</span>
+          <span class="tag">Barricades urbanes</span>
+        </div>
+        <img src="images/urquinaona.jpg" alt="Plaça d’Urquinaona" class="waypoint-img">
+        <p>
+          La Plaça d’Urquinaona va ser escenari d’enfrontaments armats durant els Fets de Maig de 1937,
+          quan diferents grups del bàndol republicà es van enfrontar entre ells. Aquest episodi recorda
+          la complexitat interna del conflicte i la guerra dins la pròpia rereguarda.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Plaça d’Urquinaona, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=b5efa9a9-050d-49c7-8356-1dbc9f6e6ff6"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot d’aquest punt
+          </a>
+        </p>
+      </article>
+
+      <!-- 7 -->
+      <article class="waypoint">
+        <h3>7. Plaça del Diamant – Refugi antiaeri i vida sota les bombes</h3>
+        <div>
+          <span class="tag">Refugi antiaeri</span>
+          <span class="tag">Barri de Gràcia</span>
+        </div>
+        <img src="images/placa-diamant.jpg" alt="Plaça del Diamant" class="waypoint-img">
+        <p>
+          Sota la Plaça del Diamant s’hi conserva un refugi antiaeri construït per protegir la
+          població dels bombardejos. Barcelona va ser una de les primeres ciutats bombardejades
+          sistemàticament per atacar la rereguarda civil.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Plaça del Diamant, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=8d45b87d-e7d4-42df-9eca-a5858364cf55"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot d’aquest punt
+          </a>
+        </p>
+      </article>
+
+      <!-- 8 -->
+      <article class="waypoint">
+        <h3>8. Casa de les Punxes – Vigilància i arquitectura modernista</h3>
+        <div>
+          <span class="tag">Modernisme</span>
+          <span class="tag">Punt estratègic</span>
+        </div>
+        <img src="images/casa-punxes.jpg" alt="Casa de les Punxes" class="waypoint-img">
+        <p>
+          La Casa de les Punxes és un edifici modernista singular. Durant la guerra, la seva alçada
+          i situació permetien un bon control visual sobre els carrers de l’Eixample. És un exemple
+          de com edificis civils i artístics poden adquirir funcions militars en temps de conflicte.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Casa de les Punxes, Avinguda Diagonal 420, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=54f28e1e-701d-4b56-b28a-5d9733fb208d"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot d’aquest punt
+          </a>
+        </p>
+      </article>
+
+      <!-- 9 -->
+      <article class="waypoint">
+        <h3>9. Avinguda Diagonal / Passeig de Sant Joan – Troncal de mobilització</h3>
+        <div>
+          <span class="tag">Artèria viària</span>
+          <span class="tag">Moviments de tropes</span>
+        </div>
+        <img src="images/diagonal-sant-joan.jpg" alt="Avinguda Diagonal amb Passeig de Sant Joan" class="waypoint-img">
+        <p>
+          Aquest tram de la Diagonal funcionava com una autèntica artèria logística, per on circulaven
+          vehicles militars, ambulàncies i columnes de combatents en direcció a altres barris i sortides
+          de la ciutat.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Cruïlla Avinguda Diagonal / Passeig de Sant Joan, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=5cf906e7-6ccf-4844-a020-5cdc1a0c67b3"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot d’aquest punt
+          </a>
+        </p>
+      </article>
+
+      <!-- 10 -->
+      <article class="waypoint">
+        <h3>10. Retorn a Plaça Catalunya – Tancament del cercle</h3>
+        <div>
+          <span class="tag">Fi de la ruta</span>
+          <span class="tag">Reflexió final</span>
+        </div>
+        <img src="images/placa-catalunya-actual.jpg" alt="Plaça Catalunya actual" class="waypoint-img">
+        <p>
+          La ruta acaba al mateix lloc on ha començat. Després de recórrer refugis, places,
+          edificis institucionals i carrers marcats per la guerra, la Plaça Catalunya es pot mirar
+          amb uns altres ulls: com un espai carregat de memòria, on la vida quotidiana actual
+          conviu amb un passat convuls.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Plaça Catalunya, Barcelona (final de la ruta)</p>
+        <p style="font-size:0.85rem;">
+          El Kahoot de reflexió final és el mateix que al <strong>punt 1</strong>.
+        </p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=9266f886-42d8-4e03-948c-05d5c4f097ce"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot (resum final)
+          </a>
+        </p>
+      </article>
+    </section>
+
+    <p class="footer-note">
+      Aquesta ruta es pot adaptar, escurçar o ampliar afegint altres espais relacionats amb la memòria
+      de la Guerra Civil a Barcelona.
+    </p>
+  </section>
+
+  <!-- ====================== CASTELLANO ====================== -->
+  <section id="lang-es" class="lang-section">
+    <section class="intro">
+      <h2>Descripción de la ruta</h2>
+      <p>
+        Esta ruta propone un recorrido circular por algunos de los espacios más significativos
+        de Barcelona durante la Guerra Civil Española (1936–1939). El punto de inicio y final es
+        la <strong>Plaza Cataluña</strong>, y el itinerario pasa por el Barrio Gótico, el centro
+        histórico, el Eixample y el barrio de Gràcia.
+      </p>
+      <p>
+        El recorrido está pensado para hacerse <strong>a pie</strong>, en aproximadamente
+        <strong>2 horas</strong>, combinando los trayectos con paradas de unos 8–10 minutos en cada lugar
+        para leer la información, observar el entorno e imaginar el contexto histórico.
+      </p>
+      <p>
+        La ruta se centra en la vida cotidiana en guerra, los espacios de poder y la memoria visible
+        que aún se conserva en plazas y fachadas.
+      </p>
+    </section>
+
+    <section class="map-link">
+      <h2>Ruta en Google Maps</h2>
+      <p>
+        Puedes seguir la ruta directamente en Google Maps con este enlace. El recorrido está configurado
+        como ruta circular a pie, empezando y terminando en Plaza Cataluña.
+      </p>
+      <p>
+        <a href="https://www.google.com/maps/dir/Plaça+Catalunya,+Barcelona/Portal+de+l'Àngel,+Barcelona/Plaça+de+Sant+Felip+Neri,+Barcelona/Plaça+del+Rei,+Barcelona/Via+Laietana+10,+Barcelona/Plaça+d'Urquinaona,+Barcelona/Plaça+del+Diamant,+Barcelona/Casa+de+les+Punxes,+Barcelona/Avinguda+Diagonal+420,+Barcelona/Plaça+Catalunya,+Barcelona/"
+           target="_blank" rel="noopener noreferrer">
+          Abrir la ruta en Google Maps
+        </a>
+      </p>
+    </section>
+
+    <section class="waypoints">
+      <h2>Puntos de la ruta (pinpoints)</h2>
+
+      <!-- 1 -->
+      <article class="waypoint">
+        <h3>1. Plaza Cataluña – El corazón de la Barcelona republicana</h3>
+        <div>
+          <span class="tag">Inicio y final</span>
+          <span class="tag">Eje neurálgico</span>
+        </div>
+        <img src="images/placa-catalunya.jpg" alt="Plaza Cataluña" class="waypoint-img">
+        <p>
+          Durante la Guerra Civil, Plaza Cataluña fue el gran centro de organización política y social
+          de Barcelona. Desde aquí salían columnas de milicianos al frente, se celebraban mítines y era
+          un espacio clave de propaganda y movilización. Muchos edificios sufrieron impactos de metralla
+          y bombardeos aéreos.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Plaza Cataluña, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=9266f886-42d8-4e03-948c-05d5c4f097ce"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot de este punto
+          </a>
+        </p>
+      </article>
+
+      <!-- 2 -->
+      <article class="waypoint">
+        <h3>2. Portal de l’Àngel – Las marcas del fuego cruzado</h3>
+        <div>
+          <span class="tag">Fachadas con metralla</span>
+          <span class="tag">Centro histórico</span>
+        </div>
+        <img src="images/portal-angel.jpg" alt="Portal de l’Àngel" class="waypoint-img">
+        <p>
+          El Portal de l’Àngel es hoy una de las calles comerciales más concurridas de Barcelona, pero
+          en 1936–1937 fue escenario de tiroteos y enfrentamientos. Algunas fachadas conservan impactos
+          de bala y metralla, testimonio silencioso de la guerra en pleno centro urbano.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Portal de l’Àngel, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=b67e228a-2ed3-402f-a84d-a90bfddd7557"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot de este punto
+          </a>
+        </p>
+      </article>
+
+      <!-- 3 -->
+      <article class="waypoint">
+        <h3>3. Plaza de Sant Felip Neri – La tragedia de los bombardeos</h3>
+        <div>
+          <span class="tag">Bombardeo 1938</span>
+          <span class="tag">Memoria de las víctimas</span>
+        </div>
+        <img src="images/sant-felip-neri.jpg" alt="Plaza Sant Felip Neri" class="waypoint-img">
+        <p>
+          La plaza de Sant Felip Neri es uno de los espacios más impactantes de la ciudad. En 1938 fue
+          bombardeada y murieron decenas de personas, muchos de ellos niños. La fachada de la iglesia
+          conserva las cicatrices de metralla alrededor de la puerta principal.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Plaza Sant Felip Neri, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=84ceeed9-5cd6-4432-89f1-46d6e7538fa4"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot de este punto
+          </a>
+        </p>
+      </article>
+
+      <!-- 4 -->
+      <article class="waypoint">
+        <h3>4. Plaza del Rei – Archivos y poder institucional</h3>
+        <div>
+          <span class="tag">Barrio Gótico</span>
+          <span class="tag">Archivos históricos</span>
+        </div>
+        <img src="images/placa-del-rei.jpg" alt="Plaza del Rei" class="waypoint-img">
+        <p>
+          La Plaza del Rei, rodeada de edificios medievales, está vinculada desde hace siglos a la
+          administración y al poder institucional. Durante la guerra, algunos espacios se utilizaron
+          para proteger documentación y archivos ante el riesgo de destrucción.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Plaza del Rei, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=989e4419-97a6-4356-9180-c55cd333719e"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot de este punto
+          </a>
+        </p>
+      </article>
+
+      <!-- 5 -->
+      <article class="waypoint">
+        <h3>5. Via Laietana 10 – Nervio policial y de represión</h3>
+        <div>
+          <span class="tag">Comisaría</span>
+          <span class="tag">Control político</span>
+        </div>
+        <img src="images/via-laietana.jpg" alt="Via Laietana" class="waypoint-img">
+        <p>
+          La Via Laietana ha estado asociada durante décadas al control policial y la represión. Ya en la
+          Guerra Civil acogía dependencias policiales y administrativas, y en la dictadura franquista se
+          consolidó como un espacio temido por los opositores políticos.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Via Laietana 10, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=a786c388-fa87-4643-aadd-260b0119af32"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot de este punto
+          </a>
+        </p>
+      </article>
+
+      <!-- 6 -->
+      <article class="waypoint">
+        <h3>6. Plaza de Urquinaona – Barricadas y enfrentamientos internos</h3>
+        <div>
+          <span class="tag">Hechos de Mayo 1937</span>
+          <span class="tag">Barricadas urbanas</span>
+        </div>
+        <img src="images/urquinaona.jpg" alt="Plaza de Urquinaona" class="waypoint-img">
+        <p>
+          La Plaza de Urquinaona fue escenario de enfrentamientos armados durante los Hechos de Mayo
+          de 1937, cuando diferentes grupos del bando republicano se enfrentaron entre sí. Recuerda el
+          componente de conflicto interno de la guerra.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Plaza de Urquinaona, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=b5efa9a9-050d-49c7-8356-1dbc9f6e6ff6"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot de este punto
+          </a>
+        </p>
+      </article>
+
+      <!-- 7 -->
+      <article class="waypoint">
+        <h3>7. Plaza del Diamant – Refugio antiaéreo y vida bajo las bombas</h3>
+        <div>
+          <span class="tag">Refugio antiaéreo</span>
+          <span class="tag">Barrio de Gràcia</span>
+        </div>
+        <img src="images/placa-diamant.jpg" alt="Plaza del Diamant" class="waypoint-img">
+        <p>
+          Bajo la Plaza del Diamant se conserva un refugio antiaéreo que protegía a la población de los
+          bombardeos. Barcelona fue una de las primeras ciudades bombardeadas de forma sistemática para
+          atacar a la población civil de la retaguardia.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Plaza del Diamant, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=8d45b87d-e7d4-42df-9eca-a5858364cf55"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot de este punto
+          </a>
+        </p>
+      </article>
+
+      <!-- 8 -->
+      <article class="waypoint">
+        <h3>8. Casa de les Punxes – Vigilancia y arquitectura modernista</h3>
+        <div>
+          <span class="tag">Modernismo</span>
+          <span class="tag">Punto estratégico</span>
+        </div>
+        <img src="images/casa-punxes.jpg" alt="Casa de les Punxes" class="waypoint-img">
+        <p>
+          La Casa de les Punxes es un edificio modernista muy característico. Durante la guerra, su altura
+          y ubicación permitían vigilar varios ejes importantes del Eixample, lo que ilustra cómo algunos
+          edificios civiles adquirieron funciones militares.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Casa de les Punxes, Avinguda Diagonal 420, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=54f28e1e-701d-4b56-b28a-5d9733fb208d"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot de este punto
+          </a>
+        </p>
+      </article>
+
+      <!-- 9 -->
+      <article class="waypoint">
+        <h3>9. Avinguda Diagonal / Passeig de Sant Joan – Eje de movilidad</h3>
+        <div>
+          <span class="tag">Arteria viaria</span>
+          <span class="tag">Movimientos de tropas</span>
+        </div>
+        <img src="images/diagonal-sant-joan.jpg" alt="Avinguda Diagonal y Passeig de Sant Joan" class="waypoint-img">
+        <p>
+          Este tramo de la Diagonal funcionaba como un importante eje logístico. Por aquí circulaban
+          vehículos militares, ambulancias y columnas de combatientes.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Cruce Avinguda Diagonal / Passeig de Sant Joan, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=5cf906e7-6ccf-4844-a020-5cdc1a0c67b3"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot de este punto
+          </a>
+        </p>
+      </article>
+
+      <!-- 10 -->
+      <article class="waypoint">
+        <h3>10. Regreso a Plaza Cataluña – Cierre del círculo</h3>
+        <div>
+          <span class="tag">Fin de la ruta</span>
+          <span class="tag">Reflexión final</span>
+        </div>
+        <img src="images/placa-catalunya-actual.jpg" alt="Plaza Cataluña actual" class="waypoint-img">
+        <p>
+          La ruta concluye en el mismo punto donde empieza. Después de conocer refugios, plazas,
+          edificios institucionales y espacios marcados por la guerra, Plaza Cataluña se puede entender
+          como un lugar cargado de memoria, donde la vida actual convive con un pasado convulso.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Plaza Cataluña, Barcelona (final de la ruta)</p>
+        <p style="font-size:0.85rem;">
+          El Kahoot final de repaso es el mismo que en el <strong>punto 1</strong>.
+        </p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=9266f886-42d8-4e03-948c-05d5c4f097ce"
+             target="_blank" rel="noopener noreferrer">
+            Jugar Kahoot (resumen final)
+          </a>
+        </p>
+      </article>
+    </section>
+
+    <p class="footer-note">
+      Esta ruta puede adaptarse, recortarse o ampliarse añadiendo otros espacios relacionados con la
+      memoria de la Guerra Civil en Barcelona.
+    </p>
+  </section>
+
+  <!-- ====================== ENGLISH ====================== -->
+  <section id="lang-en" class="lang-section">
+    <section class="intro">
+      <h2>Route description</h2>
+      <p>
+        This circular walking route explores some of the most significant sites in Barcelona related
+        to the Spanish Civil War (1936–1939). It starts and ends at <strong>Plaça Catalunya</strong>
+        and passes through the Gothic Quarter, the historic centre, the Eixample district and the
+        Gràcia neighbourhood.
+      </p>
+      <p>
+        The route is designed to be done <strong>on foot</strong> in about <strong>2 hours</strong>,
+        combining walking sections with short stops to read the information, observe the spaces and
+        imagine the historical context.
+      </p>
+      <p>
+        It focuses on everyday life in wartime, spaces of power and control, and the visible traces
+        of the conflict that remain in the city.
+      </p>
+    </section>
+
+    <section class="map-link">
+      <h2>Route on Google Maps</h2>
+      <p>
+        You can follow the route directly on Google Maps using this link. The itinerary is set up as a
+        circular walking route, starting and ending at Plaça Catalunya.
+      </p>
+      <p>
+        <a href="https://www.google.com/maps/dir/Plaça+Catalunya,+Barcelona/Portal+de+l'Àngel,+Barcelona/Plaça+de+Sant+Felip+Neri,+Barcelona/Plaça+del+Rei,+Barcelona/Via+Laietana+10,+Barcelona/Plaça+d'Urquinaona,+Barcelona/Plaça+del+Diamant,+Barcelona/Casa+de+les+Punxes,+Barcelona/Avinguda+Diagonal+420,+Barcelona/Plaça+Catalunya,+Barcelona/"
+           target="_blank" rel="noopener noreferrer">
+          Open route in Google Maps
+        </a>
+      </p>
+    </section>
+
+    <section class="waypoints">
+      <h2>Route points (pinpoints)</h2>
+
+      <!-- 1 -->
+      <article class="waypoint">
+        <h3>1. Plaça Catalunya – Heart of Republican Barcelona</h3>
+        <div>
+          <span class="tag">Start & end point</span>
+          <span class="tag">City hub</span>
+        </div>
+        <img src="images/placa-catalunya.jpg" alt="Plaça Catalunya" class="waypoint-img">
+        <p>
+          During the Civil War, Plaça Catalunya was a key political and social hub. Columns of
+          volunteers departed from here to the front, political rallies were held in the square,
+          and propaganda was widely distributed. Many surrounding buildings suffered shrapnel
+          damage and aerial bombings.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Plaça Catalunya, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=9266f886-42d8-4e03-948c-05d5c4f097ce"
+             target="_blank" rel="noopener noreferrer">
+            Play Kahoot for this spot
+          </a>
+        </p>
+      </article>
+
+      <!-- 2 -->
+      <article class="waypoint">
+        <h3>2. Portal de l’Àngel – Traces of crossfire</h3>
+        <div>
+          <span class="tag">Shrapnel on façades</span>
+          <span class="tag">Historic centre</span>
+        </div>
+        <img src="images/portal-angel.jpg" alt="Portal de l’Àngel" class="waypoint-img">
+        <p>
+          Today, Portal de l’Àngel is a busy shopping street, but in 1936–1937 it was a scene of
+          gunfire and clashes. Some façades still show bullet and shrapnel marks, a discreet yet
+          powerful reminder of the fighting in the heart of the city.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Portal de l’Àngel, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=b67e228a-2ed3-402f-a84d-a90bfddd7557"
+             target="_blank" rel="noopener noreferrer">
+            Play Kahoot for this spot
+          </a>
+        </p>
+      </article>
+
+      <!-- 3 -->
+      <article class="waypoint">
+        <h3>3. Plaça de Sant Felip Neri – The tragedy of the bombings</h3>
+        <div>
+          <span class="tag">Bombed in 1938</span>
+          <span class="tag">Victims’ memory</span>
+        </div>
+        <img src="images/sant-felip-neri.jpg" alt="Plaça Sant Felip Neri" class="waypoint-img">
+        <p>
+          Plaça de Sant Felip Neri is one of the most moving places in Barcelona. In 1938 it was
+          bombed, and dozens of people died, many of them children. The church façade still shows
+          shrapnel scars around the entrance, preserved as a memorial to the victims.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Plaça de Sant Felip Neri, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=84ceeed9-5cd6-4432-89f1-46d6e7538fa4"
+             target="_blank" rel="noopener noreferrer">
+            Play Kahoot for this spot
+          </a>
+        </p>
+      </article>
+
+      <!-- 4 -->
+      <article class="waypoint">
+        <h3>4. Plaça del Rei – Archives and institutional power</h3>
+        <div>
+          <span class="tag">Gothic Quarter</span>
+          <span class="tag">Historical archives</span>
+        </div>
+        <img src="images/placa-del-rei.jpg" alt="Plaça del Rei" class="waypoint-img">
+        <p>
+          Surrounded by medieval buildings, Plaça del Rei has long been associated with political and
+          institutional power. During the war, some spaces were used to safeguard documents and
+          archival material from destruction.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Plaça del Rei, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=989e4419-97a6-4356-9180-c55cd333719e"
+             target="_blank" rel="noopener noreferrer">
+            Play Kahoot for this spot
+          </a>
+        </p>
+      </article>
+
+      <!-- 5 -->
+      <article class="waypoint">
+        <h3>5. Via Laietana 10 – Police control and repression</h3>
+        <div>
+          <span class="tag">Police building</span>
+          <span class="tag">Political control</span>
+        </div>
+        <img src="images/via-laietana.jpg" alt="Via Laietana" class="waypoint-img">
+        <p>
+          Via Laietana has been linked for decades with policing and repression. During the Civil War
+          it already housed key police and administrative offices, and under Franco’s dictatorship it
+          became notorious as a place of detention and interrogation.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Via Laietana 10, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=a786c388-fa87-4643-aadd-260b0119af32"
+             target="_blank" rel="noopener noreferrer">
+            Play Kahoot for this spot
+          </a>
+        </p>
+      </article>
+
+      <!-- 6 -->
+      <article class="waypoint">
+        <h3>6. Plaça d’Urquinaona – Barricades and internal conflict</h3>
+        <div>
+          <span class="tag">May 1937 events</span>
+          <span class="tag">Urban barricades</span>
+        </div>
+        <img src="images/urquinaona.jpg" alt="Plaça d’Urquinaona" class="waypoint-img">
+        <p>
+          Plaça d’Urquinaona was one of the focal points of armed clashes during the May 1937 events,
+          when different groups within the Republican side fought each other. It illustrates the
+          internal divisions and tensions that also shaped the conflict.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Plaça d’Urquinaona, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=b5efa9a9-050d-49c7-8356-1dbc9f6e6ff6"
+             target="_blank" rel="noopener noreferrer">
+            Play Kahoot for this spot
+          </a>
+        </p>
+      </article>
+
+      <!-- 7 -->
+      <article class="waypoint">
+        <h3>7. Plaça del Diamant – Air-raid shelter and life under bombs</h3>
+        <div>
+          <span class="tag">Air-raid shelter</span>
+          <span class="tag">Gràcia district</span>
+        </div>
+        <img src="images/placa-diamant.jpg" alt="Plaça del Diamant" class="waypoint-img">
+        <p>
+          Beneath Plaça del Diamant there is an air-raid shelter that protected civilians from the
+          bombings. Barcelona was one of the first cities in history to be systematically bombed to
+          terrorise the population in the rear.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Plaça del Diamant, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=8d45b87d-e7d4-42df-9eca-a5858364cf55"
+             target="_blank" rel="noopener noreferrer">
+            Play Kahoot for this spot
+          </a>
+        </p>
+      </article>
+
+      <!-- 8 -->
+      <article class="waypoint">
+        <h3>8. Casa de les Punxes – Modernist architecture used for surveillance</h3>
+        <div>
+          <span class="tag">Modernism</span>
+          <span class="tag">Strategic point</span>
+        </div>
+        <img src="images/casa-punxes.jpg" alt="Casa de les Punxes" class="waypoint-img">
+        <p>
+          Casa de les Punxes is a striking modernist building. During the war, its height and position
+          allowed good visual control over several streets in the Eixample district, showing how
+          civilian architecture could acquire military or surveillance functions.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Casa de les Punxes, Avinguda Diagonal 420, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=54f28e1e-701d-4b56-b28a-5d9733fb208d"
+             target="_blank" rel="noopener noreferrer">
+            Play Kahoot for this spot
+          </a>
+        </p>
+      </article>
+
+      <!-- 9 -->
+      <article class="waypoint">
+        <h3>9. Avinguda Diagonal / Passeig de Sant Joan – Mobility axis</h3>
+        <div>
+          <span class="tag">Main avenue</span>
+          <span class="tag">Troop movements</span>
+        </div>
+        <img src="images/diagonal-sant-joan.jpg" alt="Avinguda Diagonal and Passeig de Sant Joan" class="waypoint-img">
+        <p>
+          This stretch of Avinguda Diagonal served as a major logistical axis. Military vehicles,
+          ambulances and columns of fighters moved along this avenue, linking different parts of the
+          city and the routes out towards the front.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Junction of Avinguda Diagonal / Passeig de Sant Joan, Barcelona</p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=5cf906e7-6ccf-4844-a020-5cdc1a0c67b3"
+             target="_blank" rel="noopener noreferrer">
+            Play Kahoot for this spot
+          </a>
+        </p>
+      </article>
+
+      <!-- 10 -->
+      <article class="waypoint">
+        <h3>10. Return to Plaça Catalunya – Closing the circle</h3>
+        <div>
+          <span class="tag">End of route</span>
+          <span class="tag">Final reflection</span>
+        </div>
+        <img src="images/placa-catalunya-actual.jpg" alt="Plaça Catalunya today" class="waypoint-img">
+        <p>
+          The route ends where it began. After visiting shelters, squares, institutional buildings
+          and streets marked by war, Plaça Catalunya can be seen as a space full of memory, where
+          everyday life today coexists with a turbulent past.
+        </p>
+        <p class="coords"><strong>Pinpoint:</strong> Plaça Catalunya, Barcelona (end of route)</p>
+        <p style="font-size:0.85rem;">
+          The final review Kahoot is the same as at <strong>point 1</strong>.
+        </p>
+        <p>
+          <a class="kahoot-link"
+             href="https://play.kahoot.it/v2/?quizId=9266f886-42d8-4e03-948c-05d5c4f097ce"
+             target="_blank" rel="noopener noreferrer">
+            Play Kahoot (final review)
+          </a>
+        </p>
+      </article>
+    </section>
+
+    <p class="footer-note">
+      This route can be adapted, shortened or expanded by adding other sites connected to the memory
+      of the Spanish Civil War in Barcelona.
+    </p>
+  </section>
+</main>
+
+<script>
+  const buttons = document.querySelectorAll('.lang-btn');
+  const sections = document.querySelectorAll('.lang-section');
+
+  function setLanguage(lang) {
+    sections.forEach(sec => {
+      sec.classList.toggle('active', sec.id === 'lang-' + lang);
+    });
+    buttons.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    try {
+      localStorage.setItem('ruta-lang', lang);
+    } catch (e) {}
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      setLanguage(btn.dataset.lang);
+    });
+  });
+
+  try {
+    const saved = localStorage.getItem('ruta-lang');
+    if (saved && ['ca', 'es', 'en'].includes(saved)) {
+      setLanguage(saved);
+    }
+  } catch (e) {}
+</script>
+
+</body>
+</html>
